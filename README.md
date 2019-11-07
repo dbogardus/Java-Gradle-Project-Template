@@ -20,6 +20,7 @@ $: ./gradlew init  # ->
 ```
 $: ./gradlew tasks  # list tasks
 $: ./gradlew properties  # list properties
+$: ./gradlew clean build jacocoTestReport javadoc  # do everything
 ```
 
 ### build
@@ -59,11 +60,15 @@ $: jar xf build/libs/java-project-template-0.1.0.jar META-INF/MANIFEST.MF  # ext
 
 ```
 $: ./gradlew test
+
+# Note: see the HTML test reports in `build/reports/tests/test/index.html`
+# Note: see the XML test reports in `build/reports/test-results/test/TEST-**.xml`
 ```
 
 ```
-# Note: see the HTML test reports in `build/reports/tests/test/index.html`
-# Note: see the XML test reports in `build/reports/test-results/test/TEST-**.xml`
+$: ./gradlew jacocoTestReport
+
+# Note: see the test coverage reports in `build/reports/jacoco/test/html/index.html`
 ```
 
 ### gradle
@@ -71,6 +76,14 @@ $: ./gradlew test
 Home to the Gradle wrapper.  
 
 ### src
+
+```
+$: ./gradlew run  # runs application { mainClassName } in build.gradle
+```
+
+#### main/resources
+
+Change configuration.  
 
 ### build.gradle
 
