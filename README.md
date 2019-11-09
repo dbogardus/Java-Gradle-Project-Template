@@ -20,7 +20,10 @@ $: ./gradlew init  # ->
 ```
 $: ./gradlew tasks  # list tasks
 $: ./gradlew properties  # list properties
-$: ./gradlew clean build jacocoTestReport javadoc  # do everything
+```
+
+```
+$: java -DjarCli="Some-Value" -jar build/libs/java-project-template-0.1.0-all.jar  # run-time config
 ```
 
 ### build
@@ -50,7 +53,7 @@ $: ./gradlew javadoc
 #### libs
 
 ```
-$: ./gradlew jar
+$: ./gradlew jar  # build-time config in build.gradle
 ```
 ```
 $: jar xf build/libs/java-project-template-0.1.0.jar META-INF/MANIFEST.MF  # extract MANIFEST.MF into META-INF
@@ -78,7 +81,7 @@ Home to the Gradle wrapper.
 ### src
 
 ```
-$: ./gradlew run  # runs application { mainClassName } in build.gradle
+$: ./gradlew run  # runs app { mainClassName } in build.gradle
 ```
 
 #### main/resources

@@ -10,6 +10,7 @@ plugins {
     id 'java-library'  // for Java Library
     id 'application'  // for building a CLI application
     id 'jacoco'  // for test coverage
+    id 'com.github.johnrengelman.shadow' version '5.1.0'  // for uber-jar
 }
 
 repositories {
@@ -20,13 +21,13 @@ dependencies {
     api 'org.apache.commons:commons-math3:3.6.1'  // dependency is exported to consumers on their compile classpath
     implementation 'com.google.guava:guava:28.0-jre'  // used by the library/application
     implementation 'org.slf4j:slf4j-log4j12:1.7.28'  // for logging
-    
+
     testCompile "org.mockito:mockito-core:2.+"  // for mocking
     testImplementation 'org.junit.jupiter:junit-jupiter:5.4.2'  // for testing
 }
 
 application {
-    mainClassName = 'template.config.Configurator'  // define the main class
+    mainClassName = 'template.logging.LogLeveler'  // define the main class
 }
 
 test {
@@ -40,3 +41,12 @@ jar {
                    'Implementation-Version': project.version)
     }
 }
+
+import org.apache.tools.ant.filters.ReplaceTokens
+jar {  // build-time config
+    filter(ReplaceTokens, tokens:["app.cli.defined": "Some-Value"])
+}
+
+// shadowJar {  // remove unused dependencies
+//   minimize()
+// }
