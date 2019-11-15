@@ -23,7 +23,7 @@ $: ./gradlew properties  # list properties
 ```
 
 ```
-$: java -DjarCli="Some-Value" -jar build/libs/java-project-template-0.1.0-all.jar  # run-time config
+$: java -DjarCli="Run-Value" -jar build/libs/java-project-template-0.1.0-all.jar  # run-time config
 ```
 
 ### build

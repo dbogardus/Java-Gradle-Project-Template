@@ -9,18 +9,18 @@ import java.util.Properties;
 
 import org.junit.jupiter.api.Test;
 
-public class ConfigTest {
+public class TestPropertiesTest {
 	@Test
-    public void testProperties() {
-        InputStream input = getClass().getResourceAsStream("/test.properties");
-        Properties properties = new Properties();
-        try {
+	public void testProperties() {
+		InputStream input = getClass().getResourceAsStream("/test.properties");
+		Properties properties = new Properties();
+		try {
 			properties.load(input);
-			assertEquals("hello world", properties.getProperty("test.name", "default value"));
-	        assertEquals("1.01", properties.getProperty("test.version"));
 		} catch (IOException e) {
 			e.printStackTrace();
 			assertTrue(false);
 		}
-    }
+		assertEquals("hello world", properties.getProperty("test.name", "default value"));
+		assertEquals("1.01", properties.getProperty("test.version"));
+	}
 }

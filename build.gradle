@@ -27,7 +27,7 @@ dependencies {
 }
 
 application {
-    mainClassName = 'template.logging.LogLeveler'  // define the main class
+    mainClassName = 'template.Runner'  // define the main class
 }
 
 test {
@@ -43,8 +43,8 @@ jar {
 }
 
 import org.apache.tools.ant.filters.ReplaceTokens
-jar {  // build-time config
-    filter(ReplaceTokens, tokens:["app.cli.defined": "Some-Value"])
+jar {  // build-time config TODO
+    filter(ReplaceTokens, tokens:["app.cli.defined": "Build-Value"])
 }
 
 // shadowJar {  // remove unused dependencies
