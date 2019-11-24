@@ -11,7 +11,7 @@ import org.junit.jupiter.api.Test;
 
 public class TestPropertiesTest {
 	@Test
-	public void testProperties() {
+	void testProperties() {
 		InputStream input = getClass().getResourceAsStream("/test.properties");
 		Properties properties = new Properties();
 		try {

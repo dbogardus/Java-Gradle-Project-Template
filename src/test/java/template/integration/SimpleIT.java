@@ -6,7 +6,7 @@ import org.junit.jupiter.api.Test;
 
 public class SimpleIT {
 	@Test
-	public void alwaysTrue() {
+	void alwaysTrue() {
 		assertTrue(true);
 	}
 

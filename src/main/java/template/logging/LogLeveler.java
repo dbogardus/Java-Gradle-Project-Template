@@ -4,7 +4,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 public class LogLeveler {
-	private static final Logger logger = LoggerFactory.getLogger(LogLeveler.class);
+	private static Logger logger = LoggerFactory.getLogger(LogLeveler.class);
 
 	public static void main(String[] args) {
 		logger.error("Error-message");

@@ -5,16 +5,12 @@ public class User {
 	private String password_hash;
 	private boolean enabled;
 
-	
-	
 	public User(String id, String password_hash, boolean enabled) {
 		this.id = id;
 		this.password_hash = password_hash;
 		this.enabled = enabled;
 	}
 
-	
-	
 	public String getId() {
 		return id;
 	}
