@@ -1,39 +1,35 @@
 package template.config;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.Properties;
 
 public class Configurator {
+	private PropertiesReader reader;
+
+	public Configurator(PropertiesReader reader) {
+		this.reader = reader;
+	}
+	
 	public void printCliDDemoValue() {
-		System.out.println(System.getProperty("jar.cli"));
+		this.reader.setCliKeyValue("JAR_CLI");
+		System.out.println(this.reader.getProperties().getProperty("JAR_CLI"));
 	}
 
 	public void printCliFileProperties() {
-		InputStream input = getClass().getResourceAsStream("/app.properties");
-		Properties properties = new Properties();
-		try {
-			properties.load(input);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		System.out.println(properties.getProperty("app.name", "default value"));
-		System.out.println(properties.getProperty("app.version", "another default value"));
-		System.out.println(properties.getProperty("app.cli.defined", "app.cli.defined not defined"));
+		this.reader.loadFileProperties("/app.properties");
+		Properties properties = this.reader.getProperties();
+		
+		System.out.println(properties.getProperty("APP_NAME", "default value"));
+		System.out.println(properties.getProperty("APP_VERSION", "another default value"));
+		System.out.println(properties.getProperty("APP_CLI_DEFINED", "APP_CLI_DEFINED not defined"));
 	}
 
-	public String getCliDValue(String d_key) {
-		return System.getProperty(d_key);
+	public Properties getCliDValue(String d_key) {
+		this.reader.setCliKeyValue(d_key);
+		return this.reader.getProperties();
 	}
 
 	public Properties getCliFileProperties(String file_path) {
-		Properties properties = new Properties();
-		InputStream input = getClass().getResourceAsStream(file_path);
-		try {
-			properties.load(input);
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
-		return properties;
+		this.reader.loadFileProperties("/app.properties");
+		return this.reader.getProperties();
 	}
 }

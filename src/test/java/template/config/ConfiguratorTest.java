@@ -8,7 +8,9 @@ import java.util.Properties;
 import org.junit.jupiter.api.Test;
 
 class ConfiguratorTest {
-	Configurator configurator = new Configurator();
+	Properties prop = new Properties();
+	PropertiesReader reader = new PropertiesReader(prop);
+	Configurator configurator = new Configurator(reader);
 
 	@Test
 	void getCliFilePropertiesTest() {
@@ -16,8 +18,8 @@ class ConfiguratorTest {
 
 		Properties properties = configurator.getCliFileProperties(file_path);
 
-		assertEquals(properties.getProperty("app.name", "default not used"), "Properties Sample Code");
-		assertEquals(properties.getProperty("app.version"), "1.09");
+		assertEquals(properties.getProperty("APP_NAME", "default not used"), "Properties Sample Code");
+		assertEquals(properties.getProperty("APP_VERSION"), "1.09");
 	}
 
 	@Test

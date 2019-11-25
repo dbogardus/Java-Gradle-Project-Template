@@ -20,7 +20,7 @@ public class TestPropertiesTest {
 			e.printStackTrace();
 			assertTrue(false);
 		}
-		assertEquals("hello world", properties.getProperty("test.name", "default value"));
-		assertEquals("1.01", properties.getProperty("test.version"));
+		assertEquals("hello world", properties.getProperty("TEST_NAME", "default value"));
+		assertEquals("1.01", properties.getProperty("TEST_VERSION"));
 	}
 }

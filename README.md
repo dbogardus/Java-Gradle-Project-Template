@@ -23,14 +23,13 @@ $: ./gradlew properties  # list properties
 ```
 
 ```
-$: java "-Djar.cli=Run-Value" -jar build/libs/java-project-template-0.1.0-all.jar  # run-time config
+$: java "-DJAR_CLI=Run-Value" -jar build/libs/java-project-template-0.1.0-all.jar  # run-time config
 ```
 
 ### build
 
 ```
-$: ./gradlew clean
-$: ./gradlew build  # compile, test, jar and javadoc all at once
+$: ./gradlew clean build  # compile, test, jar and javadoc all at once
 ```
 
 ```
