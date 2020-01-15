@@ -9,6 +9,8 @@
 plugins {
     id 'java-library'  // for Java Library
     id 'application'  // for building a CLI application
+    id 'checkstyle'  // style checker
+    id 'pmd'  // static code analyzer
     id 'jacoco'  // for test coverage
     id 'com.github.johnrengelman.shadow' version '5.1.0'  // for uber-jar
 }

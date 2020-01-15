@@ -105,3 +105,9 @@ Gradle wrapper runners.
 
 For build configuration:
 * root project
+
+### Checkstyle and PMD checks
+
+```
+$: ./gradlew check  # run checkstyle and pmd
+```
