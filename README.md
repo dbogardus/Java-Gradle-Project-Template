@@ -1,5 +1,7 @@
 ## Java Gradle Project Template
 
+[Gradle Tutorial](https://github.com/MislavJaksic/Gradle-Tutorial)
+
 ```
 # Note: install Java and Gradle
 
