@@ -113,3 +113,5 @@ For build configuration:
 ```
 $: ./gradlew check  # run checkstyle and pmd
 ```
+
+ADD A PROFILER! https://www.ej-technologies.com/products/jprofiler/overview.html
