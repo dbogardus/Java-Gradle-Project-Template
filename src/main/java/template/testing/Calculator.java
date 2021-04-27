@@ -18,6 +18,14 @@ public class Calculator {
 		this.last_result -= a;
 		return this;
 	}
+	
+	public Calculator divide(int a) {
+		if (a == 0) {
+			throw new ArithmeticException();
+		}
+		this.last_result /= a;
+		return this;
+	}
 
 	public int result() {
 		return this.last_result;

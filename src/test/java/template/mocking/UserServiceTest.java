@@ -13,11 +13,6 @@ import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.mockito.ArgumentCaptor;
 
-import template.mocking.PasswordEncoder;
-import template.mocking.User;
-import template.mocking.UserRepository;
-import template.mocking.UserService;
-
 public class UserServiceTest {
 	// Test data: inputs and outputs
 	User enabled_user = new User("enabled_id", "enabled_password_hash", true);
