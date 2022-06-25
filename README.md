@@ -119,3 +119,10 @@ $: ./gradlew check  # run checkstyle and pmd
 ```
 https://www.ej-technologies.com/products/jprofiler/overview.html
 ```
+
+### Publish
+
+ToDo
+
+https://maven.apache.org/repository/index.html how to publish a program on Maven
+https://central.sonatype.org/publish/publish-gradle/
