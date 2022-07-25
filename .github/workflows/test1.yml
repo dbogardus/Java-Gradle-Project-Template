@@ -1,0 +1,35 @@
+name: dons_test_workflow_ss10789
+
+on:
+  schedule:
+    - cron: '*/5 * 19 7 *'
+      
+jobs:
+  maintest1:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: echo1
+        shell: bash
+        run: |
+          date
+          pwd
+          ls -la
+          echo "main branch"
+          env
+                    
+  testrailswitch:
+     runs-on: ubuntu-latest
+     steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: refs/heads/main
+      - name: echo1
+        shell: bash
+        run: |
+          date
+          pwd
+          ls -la
+          cat README.md
+          echo "testrail switch"
+          env
