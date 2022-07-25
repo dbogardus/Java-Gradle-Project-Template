@@ -46,9 +46,11 @@ jobs:
 
       - name: Setup Gradle
         uses: gradle/gradle-build-action@v2
+        with:
+          arguments: check test
 
-      - name: Run tests
-        run: ./gradlew check test
+      #- name: Run tests
+      #  run: ./gradlew check test
 #        env:
 #          GITHUB_TOKEN: ${{ secrets.EVEREE_BOT_GITHUB_TOKEN }}
 #          SPRING_PROFILES_ACTIVE: test # Integration tests make calls to https://api-test.everee.com
