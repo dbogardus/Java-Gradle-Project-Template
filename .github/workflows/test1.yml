@@ -6,7 +6,7 @@ on:
       
 jobs:
   maintest1:
-    if: github.ref == 'refs/heads/main'
+    if: github.ref == 'refs/heads/master'
     runs-on: ubuntu-latest
     steps:
       - name: echo1
@@ -23,7 +23,7 @@ jobs:
      steps:
       - uses: actions/checkout@v2
         with:
-          ref: refs/heads/main
+          ref: refs/heads/master
       - name: echo1
         shell: bash
         run: |
@@ -31,5 +31,5 @@ jobs:
           pwd
           ls -la
           cat README.md
-          echo "testrail switch"
+          echo "branch switch"
           env
