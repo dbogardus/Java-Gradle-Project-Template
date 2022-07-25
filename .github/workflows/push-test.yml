@@ -13,20 +13,7 @@ on:
   pull_request:
     branches: [ "master" ]
 
-jobs:
-  maintest1:
-    if: github.ref == 'refs/heads/master'
-    runs-on: ubuntu-latest
-    steps:
-      - name: echo1
-        shell: bash
-        run: |
-          date
-          pwd
-          ls -la
-          echo "main branch"
-          env
-                    
+jobs:      
   testrailswitch:
      runs-on: ubuntu-latest
      steps:
@@ -42,3 +29,35 @@ jobs:
           cat README.md
           echo "branch switch"
           env
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        with:
+          ref: refs/heads/master
+
+      - name: Setup Java
+        uses: actions/setup-java@v2
+        with:
+          distribution: zulu
+          java-version: 13
+
+      - name: Setup Gradle
+        uses: gradle/gradle-build-action@v2
+
+      - name: Run tests
+        run: ./gradlew check test
+#        env:
+#          GITHUB_TOKEN: ${{ secrets.EVEREE_BOT_GITHUB_TOKEN }}
+#          SPRING_PROFILES_ACTIVE: test # Integration tests make calls to https://api-test.everee.com
+
+      - name: Publish test results
+        uses: enricomi/publish-unit-test-result-action@v1
+        if: always()
+        with:
+          files: build/test-results/test/TEST-*.xml
+          check_name: test_results
+          comment_mode: off
+          
